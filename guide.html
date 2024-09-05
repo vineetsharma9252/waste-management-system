@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waste Management Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: rgb(97, 197, 164);
+            color: #333;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: rgb(45, 170, 128, 0.8);
+            justify-content: space-between;
+        }
+        .logo {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+        }
+        .navbar {
+            display: flex;
+            flex: 1;
+            justify-content: center;
+        }
+        .navbar p {
+            font-size: 30px;
+            color: white;
+            margin: 0;
+        }
+        .backbutton {
+            background-color: rgba(198, 223, 85, 0.6);
+            border: solid 2px rgba(67, 146, 43, 0.9);
+            border-radius: 100px;
+            padding: 10px 20px;
+            cursor: pointer;
+            text-decoration: none;
+            color: rgb(60, 77, 34);
+            font-size: 18px;
+            transition: background-color 0.3s, width 0.3s, height 0.3s;
+        }
+        .backbutton:hover {
+            background-color: rgba(195, 212, 120, 0.904);
+            {% comment %} width: 200px; {% endcomment %}
+            height: 20px;
+            box-shadow: rgba(63, 75, 31, 0.685) 5px 5px 30px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgb(240, 240, 240);
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            color: rgb(45, 120, 100);
+        }
+        .section img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        .tips-list {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .tips-list li {
+            margin-bottom: 10px;
+        }
+        .interactive-section {
+            background-color: rgb(220, 220, 220);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .faq-toggle {
+            cursor: pointer;
+            color: rgb(0, 102, 51);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="https://th.bing.com/th/id/OIP.FOljZSGrz2EdrIB1F80oGgAAAA?w=233&h=123&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Logo" class="logo">
+        <div class="navbar">
+            <p>Waste Management Guide</p>
+        </div>
+        <a href="/homepage" class="backbutton">Back to Home</a>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Introduction to Waste Management</h2>
+            <p>Waste management involves the regular collection, transportation, and disposal of waste. It is crucial to manage waste effectively to protect the environment and human health. This guide will help you understand different types of waste and how to manage them efficiently.</p>
+            <img src="https://thumbs.dreamstime.com/z/waste-management-process-stages-garbage-eco-recycling-outline-diagram-labeled-educational-scheme-rubbish-generation-266635778.jpg" alt="Introduction to Waste Management">
+        </div>
+
+        <div class="section">
+            <h2>Types of Waste</h2>
+            <ul class="tips-list">
+                <li><strong>Organic Waste:</strong> Includes food scraps, garden waste, etc.</li>
+                <li><strong>Recyclable Waste:</strong> Includes paper, glass, metals, and certain plastics.</li>
+                <li><strong>Hazardous Waste:</strong> Includes chemicals, batteries, and electronics.</li>
+                <li><strong>General Waste:</strong> Includes materials that do not fit into the above categories.</li>
+            </ul>
+            <img src="https://static.vecteezy.com/system/resources/previews/004/571/879/original/waste-recycling-sustainability-infographic-garbage-classification-colors-according-to-the-type-of-waste-trash-organic-plastic-paper-glass-metal-and-indefinite-garbage-to-recycle-sustainable-vector.jpg" alt="Types of Waste">
+        </div>
+
+        <div class="section">
+            <h2>Waste Segregation Tips</h2>
+            <p>Proper segregation is key to effective waste management. Here are some tips:</p>
+            <ul class="tips-list">
+                <li>Separate waste at the source: Use different bins for organic, recyclable, and hazardous waste.</li>
+                <li>Label bins clearly: Ensure that bins are labeled to prevent mixing of different types of waste.</li>
+                <li>Follow local guidelines: Adhere to the waste disposal guidelines provided by your local authority.</li>
+            </ul>
+            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d593d812426051.56268fa3bb26d.jpg" alt="Waste Segregation Tips">
+        </div>
+
+        <div class="interactive-section">
+            <h2>Frequently Asked Questions</h2>
+            <p class="faq-toggle" onclick="toggleFAQ()">Click here to expand/collapse FAQs</p>
+            <div id="faq-content" style="display: none;">
+                <ul class="tips-list">
+                    <li><strong>How often should I dispose of organic waste?</strong> Organic waste should be disposed of daily to prevent odors and pest infestations.</li>
+                    <li><strong>Can all plastics be recycled?</strong> Not all plastics are recyclable. Check the recycling symbol on the product for information.</li>
+                    <li><strong>What do I do with hazardous waste?</strong> Contact your local waste management facility for proper disposal of hazardous materials.</li>
+                </ul>
+            </div>
+            <img src="https://th.bing.com/th/id/OIP.G7D8_wmtHG_X3D6CcWJUuAHaE8?rs=1&pid=ImgDetMain" alt="FAQs about Waste Management">
+        </div>
+    </div>
+
+    <script>
+        function toggleFAQ() {
+            var faqContent = document.getElementById('faq-content');
+            if (faqContent.style.display === "none") {
+                faqContent.style.display = "block";
+            } else {
+                faqContent.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>

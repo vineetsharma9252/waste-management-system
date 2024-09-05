@@ -1,0 +1,333 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        body {
+            padding-bottom: 2000px;
+            background-color: rgb(97, 197, 164);
+            margin: 0px;
+            font-family: Roboto;
+        }
+        .limg {
+            position: fixed;
+            left: 15px;
+            top: 6px;
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+            border-radius: 50px;
+            margin-top: 5px;
+        }
+        .bgimg {
+            display: flex;
+            position: absolute;
+            top: 150px;
+            left: 150px;
+            right: 150px;
+            justify-content: center;
+            border-radius:50px 50px;
+            
+        }
+        .bg {
+            width: 500px;
+            height: 500px;
+            object-fit: contain;
+            border-radius:40px;
+        }
+        @media (max-width: 700px) {
+            .report, .user, .learn {
+                display: none;
+            }
+        }
+        .navbar {
+            display: flex;
+            flex-direction: row;
+            position: fixed;
+            top: 15px;
+            left: 100px;
+            right: 5px;
+            border-radius: 25px;
+            height: 50px;
+            background-color: rgb(45, 170, 128, 0.9);
+            border: solid rgb(80, 158, 146) 2px;
+            align-items: center;
+        }
+        .navitems {
+            position: fixed;
+            left: 300px;
+            display: inline-block;
+            align-items: center;
+            display: grid;
+            grid-template-columns: 100px 100px 100px 100px;
+        }
+        .learn, .user, .report {
+            padding-top: 13px;
+            height: 45px;
+        }
+        .learn .learncontent, .user .usercontent, .report .reportcontent {
+            position: fixed;
+            top: 60px;
+            background-color: rgba(143, 230, 233, 0.9);
+            width: 220px;
+            border-radius: 10px;
+        }
+        .learn .learncontent, .user .usercontent, .report .reportcontent {
+            border:solid black 1px ; 
+        }
+        .learn a, .user a, .report a {
+            display: none;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: rgb(40, 77, 54);
+        }
+        .learnbutton, .userbutton, .reportbutton, .loginbutton {
+            width: 80px;
+            height: 30px;
+            border: none;
+            background-color: rgb(117, 240, 199, 0.3);
+            border-radius: 15px;
+            cursor: pointer;
+            margin-bottom: 5px;
+            font-family: Roboto;
+            z-index: 33;
+        }
+        .learn:hover a, .user:hover a, .report:hover a {
+            display: block;
+        }
+        .loginbutton a {
+            color: rgb(10, 29, 17);
+            text-decoration: none;
+        }
+        .loginbutton {
+            position: fixed;
+            right: 15%;
+            top: 26px;
+        }
+        .loginbutton:hover{
+            border:solid black 1.2px ;
+            
+        }
+        .content-section {
+            margin: 50px auto;
+            text-align: center;
+            max-width: 800px;
+            color: rgb(30, 60, 50);
+            padding: 20px;
+        }
+        .cards-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 30px;
+        }
+        .card {
+            background-color: white;
+            width: 250px;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .testimonials {
+            background-color: white;
+            padding: 30px;
+            margin: 30px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .testimonials h2 {
+            margin-bottom: 20px;
+        }
+        .testimonial {
+            margin: 20px 0;
+        }
+        .events {
+            background-color: white;
+            padding: 30px;
+            margin: 30px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .events h2 {
+            margin-bottom: 20px;
+        }
+        .faq {
+            background-color: white;
+            padding: 30px;
+            margin: 30px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .faq h2 {
+            margin-bottom: 20px;
+        }
+        .faq-item {
+            margin-bottom: 15px;
+        }
+        .newsletter {
+            background-color: rgb(45, 170, 128, 0.9);
+            padding: 30px;
+            margin: 30px auto;
+            max-width: 800px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+        }
+        .newsletter input {
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 70%;
+        }
+        .newsletter button {
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: white;
+            color: rgb(45, 170, 128);
+            cursor: pointer;
+        }
+        .footer {
+            background-color: rgb(45, 170, 128, 0.9);
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            color: white;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="bgimg"><img class="bg" src="https://img.freepik.com/free-vector/people-sorting-garbage-into-recycle-bins_53876-40261.jpg?t=st=1724580513~exp=1724584113~hmac=0999969612cb6c8d7ab3edf31e57c3bc0dc10444915e49af609fd7b891f06cec&w=826" alt=""></div>
+        <div class="navbar">
+            <div class="logo">
+                <img class="limg" src="https://th.bing.com/th/id/OIP.FOljZSGrz2EdrIB1F80oGgAAAA?w=233&h=123&c=7&r=0&o=5&dpr=1.3&pid=1.7">
+            </div>
+            <div class="navitems">
+                <div class="learn">
+                    <button class="learnbutton">Learn</button>
+                    <div class="learncontent">
+                        <a href="/Recycle_guide">Waste Management Guide</a>
+                        <a href="/Waste_Quiz">Quiz</a>
+                        <a href="/fact">Facts</a>
+                    </div>
+                </div>
+                <div class="user">
+                    <button class="userbutton">User</button>
+                    <div class="usercontent">
+                        <a href="/Waste_Schedule">Schedule</a>
+                        <a href="/DashBoard">Dashboard</a>
+                        <a href="/Waste_FAQ">FAQ</a>
+                    </div>
+                </div>
+                <div class="report">
+                    <button class="reportbutton">Report</button>
+                    <div class="reportcontent">
+                        <a href="/report_page">Report </a>
+                        <a href="_black"></a>
+                        <a href="/generater_page">Ask GPT </a>
+                    </div>
+                </div>
+                <div class="login">
+                    <button class="loginbutton"><a href="/">Register</a></button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Introduction Section -->
+    <div class="content-section">
+        <h2>Welcome to the Waste Management Dashboard</h2>
+        <p>Our mission is to educate and empower communities to take effective actions towards sustainable waste management. Explore our resources and tools to make a positive impact on the environment.</p>
+    </div>
+    
+    <!-- Information Cards Section -->
+    <div class="cards-container">
+        <div class="card">
+            <h3>Recycling</h3>
+            <p>Learn how recycling helps reduce waste and conserve resources. Discover how to properly sort and dispose of recyclable materials.</p>
+        </div>
+        <div class="card">
+            <h3>Composting</h3>
+            <p>Find out how composting organic waste can benefit your garden and reduce landfill contributions. Start composting today!</p>
+        </div>
+        <div class="card">
+            <h3>Waste Reduction</h3>
+            <p>Explore strategies for minimizing waste production in your daily life. Tips for reducing, reusing, and recycling effectively.</p>
+        </div>
+    </div>
+    <br><br>
+    <!-- Call to Action Section -->
+    <div class="content-section">
+        <h2>Get Involved!</h2>
+        <p>Join us in our efforts to make a cleaner, greener planet. Register today to stay informed and participate in our initiatives.</p>
+        <button class="loginbutton"><a href="/">Register</a></button>
+    </div>
+    
+    <!-- Testimonials Section -->
+    <div class="testimonials">
+        <h2>What People Are Saying</h2>
+        <div class="testimonial">
+            <p>"This website has been a game-changer for our community's waste management practices. The resources are incredibly helpful!" - John Doe</p>
+        </div>
+        <div class="testimonial">
+            <p>"A fantastic initiative! The information is clear and actionable. I've already started recycling more effectively." - Jane Smith</p>
+        </div>
+    </div>
+    
+    <!-- Events Section -->
+    <div class="events">
+        <h2>Upcoming Events</h2>
+        <p>Join us for our upcoming events focused on waste management and sustainability. Stay tuned for dates and details!</p>
+        <ul>
+            <li>Community Clean-Up - September 15, 2024</li>
+            <li>Recycling Workshop - October 10, 2024</li>
+            <li>Waste Reduction Seminar - November 5, 2024</li>
+        </ul>
+    </div>
+    
+    <!-- FAQs Section -->
+    <div class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>What can I recycle?</h3>
+            <p>You can recycle paper, glass, metal, and certain plastics. Check with your local recycling center for specific guidelines.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How can I start composting?</h3>
+            <p>Begin by collecting organic waste such as food scraps and yard waste. Use a compost bin or pile and turn the material regularly.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What are some tips for reducing waste?</h3>
+            <p>Reduce waste by buying in bulk, avoiding single-use items, and reusing products whenever possible. Implementing these practices can make a significant difference.</p>
+        </div>
+    </div>
+    
+    <!-- Newsletter Signup -->
+    <div class="newsletter">
+        <h2>Stay Updated</h2>
+        <p>Sign up for our newsletter to receive the latest news and updates about waste management and sustainability initiatives.</p>
+        <input type="email" placeholder="Enter your email address">
+        <button>Subscribe</button>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Waste Management Initiative. All rights reserved.</p>
+        <p>Contact us: <a href="mailto:info@wastemanagement.com">info@wastemanagement.com</a></p>
+        <p>Follow us on <a href="#">Facebook</a>, <a href="#">Twitter</a>, and <a href="#">Instagram</a></p>
+    </div>
+</body>
+</html>
